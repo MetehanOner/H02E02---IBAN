@@ -46,7 +46,7 @@ public class Bank {
         BigInteger accountNumber = new BigInteger("123456789012345678");
         BigInteger generatedIban = generateIBAN(accountNumber);
 
-        BigInteger validIBAN = new BigInteger("131481370502991311247768");
+        BigInteger validIBAN = new BigInteger("81370502991311247768");
 
         boolean validity = validateIBAN(validIBAN);
         printValidity(validity);
@@ -58,7 +58,8 @@ public class Bank {
     public static boolean validateIBAN(BigInteger iban) {
         //Hint: first, think about the return type
         //TODO: IBAN: DE43123456789012345678
-            String IBAN = iban.toString();
+            String CountryCode = "DE";
+            String IBAN = CountryCode + iban.toString();
             //TODO: Rearrange: 123456789012345678DE43
             String reIBAN = IBAN.substring(4) + IBAN.substring(0, 4);
             //TODO: Convert characters to numbers by using: A=10, B=11, C=12,…: 123456789012345678131443
